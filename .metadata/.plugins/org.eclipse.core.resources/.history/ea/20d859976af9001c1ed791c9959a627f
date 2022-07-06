@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Leave A Review</title>
+</head>
+<body>
+<header>
+<a href="/">Home</a>
+<a href="">Meat Deluxe Specialty Pizza</a>
+<a href="">Veggie Deluxe Specialty Pizza</a>
+<a href="">BBQ Chicken Specialty Pizza</a>
+<a href="">Custom Pizza Builder</a>
+<a href="/review">Leave a Review</a>
+</header>
+
+<form action="/review" method="post">
+	Name: <input name="name" type="text"/>
+	Comment: <input name="comment" type="text"/>
+	Rating: <input name="rating" type="number" min="0" max="10"/>
+	<input type="submit" class="button" onclick="/confirmation"/>
+</form>
+</body>
+</html>

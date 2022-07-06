@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Specialty Pizzas</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+<a href="/">Home</a>
+
+<a href="/custompizza">Custom Pizza Builder</a>
+<a href="/review">Leave a Review</a>
+</header>
+<div class="left">
+		<img src="/vegpizza.jpg">
+		<img src="/meatpizza.png">
+		<img src="/chickenpizza.jpg">
+	</div>
+<div class="right">
+<h3>The ${type} pizza is $${price} .</h3>
+<br>
+<img src="/specialty.jpg" id="spec">
+</div>
+</body>
+</html>

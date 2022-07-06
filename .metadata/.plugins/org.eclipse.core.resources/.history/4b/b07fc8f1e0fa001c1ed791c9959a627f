@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Custom Pizza Builder</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<header>
+		<a href="/">Home</a> <a href="/pizza?type=Meat Deluxe&price=12.99"
+			class="button">Meat Deluxe</a> <a
+			href="/pizza?type=Veggie Deluxe&price=11.99">Veggie Deluxe</a> <a
+			href="/pizza?type=BBQ Chicken&price=13.99">BBQ Chicken</a> <a
+			href="/custompizza" class="active">Custom Pizza Builder</a> <a
+			href="/review">Leave a Review</a>
+	</header>
+
+	<div class="left">
+		<img src="/vegpizza.jpg"> <img src="/meatpizza.png"> <img
+			src="/chickenpizza.jpg">
+
+	</div>
+	<div class="right">
+		<h2>Prices:</h2>
+		<ul>
+			<li>Small Pizza: $7. Toppings: $0.50 each</li> <li>$10. Toppings: $1.00 each</li>
+<li>Large Pizza: $12. Toppings: $1.25 each</li>
+<li>Gluten Free Crust: add $2</li>
+</ul>
+<div id="customleft">
+<h3>Choose below:</h3>
+<form action="/buildpizza" method="post">
+	Size: <select name="size" required>
+<option>Small</option>
+<option>Medium</option>
+<option>Largest</option>
+</select><br>
+
+	Toppings: <input name="toppings" type="number" min="0" max="10"
+					required /><br>
+	Gluten free: <input name="gluten" type="checkbox" /><br>
+	Special instructions: <input name="special" type="text" /><br>
+	<input type="submit" class="button" onclick="/buildpizza" />
+</form>
+</div>
+<div id="customright">
+			<img src="/specialty.jpg">
+		</div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+package co.grandcircus.pizzalab;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class PizzaLabController {
+
+	@RequestMapping("/")
+	public String displayIndex() {
+		return "index";
+		
+	}
+	
+	@RequestMapping("/review") 
+		public String displayReview() {
+			return "review";
+		}
+	
+	@PostMapping("/review")
+	public String submitAnimalForm(@RequestParam String type, 
+									@RequestParam String name, 
+									Model model) {
+		model.addAttribute("type", type);
+		model.addAttribute("name", name);
+		return "review"; //change this to displayReview or whatever the page after reviews is
+	}
+	
+}
